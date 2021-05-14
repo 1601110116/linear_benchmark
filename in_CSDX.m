@@ -141,8 +141,8 @@ max_difperp = 6e3;  % in cm^2/s
 min_difperp = 3e2;
 
 %  parallel diffusion coefficient for den, w and vi
-dif_z_in = 9.5e6;
-dif_z_out = 9.5e6;%2e4;
+dif_z_in = 0;  %9.5e6;
+dif_z_out = 0;  %9.5e6;%2e4;
 
 
 % Conduction
@@ -163,8 +163,8 @@ viscosity = 4.8e3;  % in cm^2/s
 %  loss of temperature is unclear and is set to be at the same rate of density damping
 %  loss of momentum by ion-neutral collsion
 
-den_damp = 5e3;
-momentum_damp = 3.4e3;
+den_damp = 0;  %5e3;
+momentum_damp = 0;  %3.4e3;
 
 
 % Resistivity (by electron-ion collision \nu)
