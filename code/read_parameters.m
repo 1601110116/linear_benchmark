@@ -75,6 +75,9 @@ if simulate_mode == 1 || simulate_mode == 3
 	momentum_damp = momentum_damp / second;
 	dt = dt * second;
 
+	N0 = N0 / denref;
+	Ln = Ln * cm;
+
 
 	% generate grid
 	dx = 2 * x_max / (nx-1);

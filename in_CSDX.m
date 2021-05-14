@@ -78,7 +78,7 @@ dt = 0.004*2.611e-5;  % time step width in second
 nt_per_diagnose = 300;
 %  total diagnose times you want in current directory, which may not be
 %  finished since the program might be interrupted
-ndiagnose = 1800;
+ndiagnose = 600;
 
 
 % Device settings
@@ -97,8 +97,10 @@ nz = 22;
 
 
 % Initial conditions
-init_uniform = 0.004;
 init_perturbation = 1e-14;
+N0 = 20e12;  % cm^-3
+Ln = 1.85;  % cm
+
 
 
 % Boundary conditions
@@ -115,7 +117,7 @@ Te_tanhsrc_incline = 0.55;
 Te_gausssrc_magnitude = 0;%0.0005;
 Te_gausssrc_sigma = 2.0;
 
-den_tanhsrc_max = 5.5e-4/0.0028;  %5.45e-4
+den_tanhsrc_max = 0; %5.5e-4/0.0028;  %5.45e-4
 den_tanhsrc_radius = 3;
 den_tanhsrc_incline = 0.55;
 den_gausssrc_magnitude = 0;
@@ -123,18 +125,18 @@ den_gausssrc_sigma = 2.0;
 
 
 % Diffusion
-%  the Coulomb loarithm is always calculated using denref and Tref
+%  the Coulomb logarithm is always calculated using denref and Tref
 
 %  dif_mode: model of perpendicular diffusion coefficient:
 %  1: classical diffusion with den=0.5*denref and Te=0.5*Tref
 %  2: updated using classical diffusion with local den and Te
 %  3: two layers of constant diffusion coefficients:
 %	      dif_perp_in for r<rdif, dif_perp_out for r>rdif
-dif_mode = 1;
+dif_mode = 3;
 rdif = 3.2;  % in cm
-dif_perp_in = 6e3;  % in cm^2/s
-dif_perp_out = 6e3;
-% limit dif_perp
+dif_perp_in = 0;  % in cm^2/s
+dif_perp_out = 0;
+% limit dif_perp (valid iff dif_mode=2)
 max_difperp = 6e3;  % in cm^2/s
 min_difperp = 3e2;
 

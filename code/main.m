@@ -12,7 +12,7 @@ generate_constants(height, radius, dx, dz, nx, nz, dt, ...
 
 build_Poisson_coefficient_matrix(dx, nx, x_max);
 
-initialize(simulate_mode, init_uniform, init_perturbation);
+initialize(simulate_mode, N0, Ln, init_perturbation);
 
 diagnose(last_diagnose, nt_per_diagnose);
 diagnose_start = last_diagnose + 1;
@@ -23,8 +23,8 @@ for idiagnose = diagnose_start : ndiagnose
 		f = 0.5;  fi = 0.5;  % constants for the time-advancing method
 		sterms();
 		sden(f, fi);
-		sTe(f, fi);
-		svi(f, fi);
+		%sTe(f, fi);
+		%svi(f, fi);
 		sw(f, fi);
 		sphi(nx, nz);
 		sdata();
@@ -32,8 +32,8 @@ for idiagnose = diagnose_start : ndiagnose
 		f = 1.0;  fi = 0.0;
 		sterms();
 		sden(f, fi);
-		sTe(f, fi);
-		svi(f, fi);
+		%sTe(f, fi);
+		%svi(f, fi);
 		sw(f, fi);
 		sphi(nx, nz);
 		sdata();

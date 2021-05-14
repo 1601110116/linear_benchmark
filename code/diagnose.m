@@ -74,49 +74,42 @@ if visual
 	colormap jet;  colorbar;  shading interp;
 	title('$$n/cm^-3$$', 'interpreter', 'latex');
 	xlabel('z/cm');  ylabel('x/cm');
-	set(gca, 'XTick', x_tick);
 	set(gca, 'YTick', x_tick);
 
 	subplot(4,4,10);  pcolor(zX, xX, squeeze(Tref*Te(:,ydiag,:)));
 	colormap jet;  colorbar;  shading interp;
 	title('$$T_{e}/eV$$', 'interpreter', 'latex');
 	xlabel('z/cm');  ylabel('x/cm');
-	set(gca, 'XTick', x_tick);
 	set(gca, 'YTick', x_tick);
 
 	subplot(4,4,11);  pcolor(zX, xX, cs0*squeeze(vi(:,ydiag,:)));
 	colormap jet;  colorbar;  shading interp;
 	title('$$v_{\parallel i}/\left(cm/s\right)$$', 'interpreter', 'latex');
 	xlabel('z/cm');  ylabel('x/cm');
-	set(gca, 'XTick', x_tick);
 	set(gca, 'YTick', x_tick);
 
 	subplot(4,4,12);  pcolor(zX, xX, Tref/rhos0^2*squeeze(w(:,ydiag,:)));
 	colormap jet;  colorbar;  shading interp;
 	title('$$w/\left(V*cm^{-2}\right)$$', 'interpreter', 'latex');
 	xlabel('z/cm');  ylabel('x/cm');
-	set(gca, 'XTick', x_tick);
 	set(gca, 'YTick', x_tick);
 
 	subplot(4,4,13);  pcolor(zX, xX, cs0*squeeze(jz(:,ydiag,:)));
 	colormap jet;  colorbar;  shading interp;
 	title('$$j_{\parallel}/\left(cm/s\right)$$', 'interpreter', 'latex');
 	xlabel('z/cm');  ylabel('x/cm');
-	set(gca, 'XTick', x_tick);
 	set(gca, 'YTick', x_tick);
 
 	subplot(4,4,14);  pcolor(zX, xX, cs0*squeeze(ve(:,ydiag,:)));
 	colormap jet;  colorbar;  shading interp;
 	title('$$v_{\parallel e}/\left(cm/s\right)$$', 'interpreter', 'latex');
 	xlabel('z/cm');  ylabel('x/cm');
-	set(gca, 'XTick', x_tick);
 	set(gca, 'YTick', x_tick);
 
 	subplot(4,4,15);  pcolor(zX, xX, Tref*squeeze(phi(:,ydiag,:)));
 	colormap jet;  colorbar;  shading interp;
 	title('$$\phi/V$$', 'interpreter', 'latex');
 	xlabel('z/cm');  ylabel('x/cm');
-	set(gca, 'XTick', x_tick);
 	set(gca, 'YTick', x_tick);
 
 	subplot(4,4,16);  xlabel(['time = ', num2str(tX), ...
