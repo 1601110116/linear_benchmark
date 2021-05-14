@@ -100,7 +100,7 @@ if visual
 	xlabel('z/cm');  ylabel('x/cm');
 	set(gca, 'YTick', x_tick);
 
-	subplot(4,4,14);  pcolor(zX, xX, cs0*squeeze(ve(:,ydiag,:)));
+	subplot(4,4,14);  pcolor(zX, xX, cs0*squeeze(nve(:,ydiag,:)));
 	colormap jet;  colorbar;  shading interp;
 	title('$$v_{\parallel e}/\left(cm/s\right)$$', 'interpreter', 'latex');
 	xlabel('z/cm');  ylabel('x/cm');
