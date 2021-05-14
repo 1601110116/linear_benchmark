@@ -171,6 +171,6 @@ momentum_damp = 3.4e3;
 %  local_nustar=0: inv_nustar is calculated using denref and Tref
 %  local_nustar=1: inv_nustar is calculated using local den and Te
 %   Coulomb logarithm is always calculated using denref and Tref
-local_nustar = 1;
+local_nustar = 0;
 
 main;

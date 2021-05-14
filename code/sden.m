@@ -1,9 +1,9 @@
 function sden (f, fi)
 % This function advances den and applies its boundary conditions
-global den den_aux calc src_den result init_uniform ve
+global den den_aux calc src_den result init_uniform ve nve
 
 result = f*den_aux(2:end-1, 2:end-1, 2:end-1) + fi*den(2:end-1, 2:end-1, 2:end-1) ...
-	+ calc .* (-ddz(den.*ve) - convect(den) + diffuse(den) + recombine(den)) ...
+	+ calc .* (-ddz(nve) - convect(den) + diffuse(den) + recombine(den)) ...
 	+ src_den;
 [nan_ix, nan_iy, nan_iz] = ind2sub(size(result), find(isnan(result)));
 [inf_ix, inf_iy, inf_iz] = ind2sub(size(result), find(isinf(result)));

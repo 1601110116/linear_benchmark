@@ -1,7 +1,7 @@
 function diagnose (idiagnose, nt_per_diagnose)
 % This function draws the contours fo the simulated quantities at run time
 global den vi w jz ve Te phi vEx vEy visual dt xX zX denref Tref cs0 rhos0 t0 ...
-	data_path diagnose_path
+	data_path diagnose_path nve
 persistent ydiag zdiag
 
 ydiag = length(xX) / 2;
@@ -55,9 +55,9 @@ if visual
 	set(gca, 'XTick', x_tick);
 	set(gca, 'YTick', x_tick);
 
-	subplot(4,4,6);  pcolor(xX, xX, cs0*ve(:,:,zdiag));
+	subplot(4,4,6);  pcolor(xX, xX, cs0*nve(:,:,zdiag));
 	colormap jet;  colorbar;  shading interp;
-	title('$$v_{\parallel e}/\left(cm/s\right)$$', 'interpreter', 'latex');
+	title('$$nv_{\parallel e}/\left(cm/s\right)$$', 'interpreter', 'latex');
 	xlabel('y/cm');  ylabel('x/cm');
 	set(gca, 'XTick', x_tick);
 	set(gca, 'YTick', x_tick);

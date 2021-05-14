@@ -1,7 +1,7 @@
 function sdata ()
 % This function solves other quantities to be saved other than the 
 %  time-advancing quantities.
-global Te vi jz ve phi vEx vEy inv_nustar ddx dt calc pe vdex vdey den mu ...
+global Te vi jz ve phi nve vEx vEy inv_nustar ddx dt calc pe vdex vdey den mu ...
 	ln_lambda t0 local_nustar
 
 % ddz() multiplies a redundant dt, which is eliminated by the dt in the denominator
@@ -20,6 +20,7 @@ end
 jz = zbcs(jz);
 %jz(2:end-1, 2:end-1, 2:end-1) = inv_nustar/dt * calc ...
 %	.* (- ddz(phi));
+nve = den .* vi - jz;
 ve = vi - jz./den;
 vEx(2:end-1, 2:end-1, 2:end-1) = calc .* ddx .* (phi(2:end-1, 1:end-2, 2:end-1) - phi(2:end-1, 3:end, 2:end-1));
 vEy(2:end-1, 2:end-1, 2:end-1) = calc .* ddx .* (phi(3:end, 2:end-1, 2:end-1) - phi(1:end-2, 2:end-1, 2:end-1));

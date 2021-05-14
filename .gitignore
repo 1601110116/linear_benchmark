@@ -1,6 +1,7 @@
 data/
 *.png
 *.eps
+*.mat
 restart*
 diagnose/
 3D_structures/
