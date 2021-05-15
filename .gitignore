@@ -8,3 +8,4 @@ diagnose/
 figs/
 further/
 extracted_profiles/
+*.out

@@ -41,9 +41,9 @@ if visual
 	set(gca, 'XTick', x_tick);
 	set(gca, 'YTick', x_tick);
 
-	subplot(4,4,4);  pcolor(xX, xX, Tref/rhos0^2*w(:,:,zdiag));
+	subplot(4,4,4);  pcolor(xX, xX, cs0/rhos0*w(:,:,zdiag));
 	colormap jet;  colorbar;  shading interp;
-	title('$$w/\left(V*cm^{-2}\right)$$', 'interpreter', 'latex');
+	title('$$w/s^{-1}$$', 'interpreter', 'latex');
 	xlabel('y/cm');  ylabel('x/cm');
 	set(gca, 'XTick', x_tick);
 	set(gca, 'YTick', x_tick);
@@ -88,9 +88,9 @@ if visual
 	xlabel('z/cm');  ylabel('x/cm');
 	set(gca, 'YTick', x_tick);
 
-	subplot(4,4,12);  pcolor(zX, xX, Tref/rhos0^2*squeeze(w(:,ydiag,:)));
+	subplot(4,4,12);  pcolor(zX, xX, cs0/rhos0*squeeze(w(:,ydiag,:)));
 	colormap jet;  colorbar;  shading interp;
-	title('$$w/\left(V*cm^{-2}\right)$$', 'interpreter', 'latex');
+	title('$$w/s^{-1}$$', 'interpreter', 'latex');
 	xlabel('z/cm');  ylabel('x/cm');
 	set(gca, 'YTick', x_tick);
 

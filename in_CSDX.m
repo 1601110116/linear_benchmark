@@ -75,7 +75,7 @@ mu = 40;  % ion mass over proton mass. mu_argon=40
 
 % Time step
 dt = 0.004*2.611e-5;  % time step width in second
-nt_per_diagnose = 300;
+nt_per_diagnose = 50;
 %  total diagnose times you want in current directory, which may not be
 %  finished since the program might be interrupted
 ndiagnose = 600;
@@ -97,7 +97,7 @@ nz = 22;
 
 
 % Initial conditions
-init_perturbation = 1e-14;
+init_perturbation = 1e-10;
 N0 = 20e12;  % cm^-3
 Ln = 1.85;  % cm
 
