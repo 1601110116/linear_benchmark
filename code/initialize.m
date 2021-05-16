@@ -11,15 +11,17 @@ if simulate_mode == 1
 	r3d1 = sqrt(x3d1.^2 + y3d1.^2);
 
 	Te = ones(nx+2, nx+2, nz+2);
-	den = N0 * exp(-0.5 * (r3d1 / Ln) .^ 2);
+	exp_fac = exp(-0.5 * (r3d1 / Ln) .^ 2);
+	den = N0 * exp_fac;
 %	Te(2:end-1, 2:end-1, 2:end-1) = Te(2:end-1, 2:end-1, 2:end-1) + ...
 %		init_perturbation * calc .* (rand(nx, nx, nz) - 0.5);
 %	den(2:end-1, 2:end-1, 2:end-1) = den(2:end-1, 2:end-1, 2:end-1) + ...
 %		init_perturbation * calc .* (rand(nx, nx, nz) - 0.5);
 %	Te(2:end-1, 2:end-1, 2:end-1) = Te(2:end-1, 2:end-1, 2:end-1) + ...
 %		init_perturbation * calc .* (rand(nx, nx, nz));
-	den(2:end-1, 2:end-1, 2:end-1) = den(2:end-1, 2:end-1, 2:end-1) + ...
-		init_perturbation * calc .* (rand(nx, nx, nz));
+    den(2:end-1, 2:end-1, 2:end-1) = den(2:end-1, 2:end-1, 2:end-1) + ...
+        init_perturbation * calc .* exp_fac(2:end-1, 2:end-1, 2:end-1) ...
+        .* rand(nx, nx, nz);
 	w = zeros(nx+2, nx+2, nz+2);  vi = w;
 %	w(2:end-1, 2:end-1, 2:end-1) = init_perturbation * calc .* (rand(nx,nx,nz)-0.5);
 	sphi(nx, nz);
