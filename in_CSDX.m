@@ -14,7 +14,7 @@ global dt nt_per_diagnose nx nz visual Tref denref init_uniform zbc_mode B0 mu .
 %     changed except ndiagnose and visual
 %  3: continue from the last .mat file in ../  . Used to simulate in 
 %     different parameters
-simulate_mode = 1;
+simulate_mode = 2;
 
 % Automatic path management
 if simulate_mode == 1
@@ -75,10 +75,10 @@ mu = 40;  % ion mass over proton mass. mu_argon=40
 
 % Time step
 dt = 0.004*2.611e-5;  % time step width in second
-nt_per_diagnose = 50;
+nt_per_diagnose = 5;
 %  total diagnose times you want in current directory, which may not be
 %  finished since the program might be interrupted
-ndiagnose = 600;
+ndiagnose = 1200;
 
 
 % Device settings

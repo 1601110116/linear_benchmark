@@ -15,6 +15,7 @@ font_size = 15;
 build_grid;
 build_grid_2d;
 for idiag = start_diag: end_diag
+	disp(['step ', num2str(idiag), ' of ' num2str(end_diag)]);
 	data_file = fullfile('data', ['dat', sprintf('%4.4d', idiag)]);
 	load(data_file, 'den');
 	denp = field2pol(den);

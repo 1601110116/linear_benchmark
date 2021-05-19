@@ -9,9 +9,9 @@ idiag = 75;
 zdiag = 12;
 ydiag = length(xX) / 2;
 l_max = 30;
-m = 0;
+m = 3;
 fig_position = [50, 50, 1600, 600];
-font_size = 8;
+font_size = 15;
 filter_n1 = 1;  % the parallel harmonic to keep. Keep all if <0
 %-----------
 
