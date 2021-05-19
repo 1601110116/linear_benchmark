@@ -11,18 +11,15 @@ function [coeff, f_ml]  = fbt_ml(f, m, l)
 %  coeff: the Fourier-Bessel coeffcient of f
 %  f_ml: back-transformed m-l component of f
 
-global tht2d r2d alpha delta_x r_max in2d out2d fourier_cores ...
-	bessel_cores
+global tht2d r2d alpha delta_x r_max in2d out2d
 
 % l-th positive zero of Bessel function of order m 
 %  scaled by the invert of radius
 lambda_ml = alpha(m+1, l) / r_max;
 % J_m(\lambda_{ml} r)
-%bessel_core = besselj(m, lambda_ml * r2d);
-bessel_core = bessel_cores{m+1, l};
+bessel_core = besselj(m, lambda_ml * r2d);
 % e^{-im\theta}
-%fourier_core = exp(-1j * m * tht2d);
-fourier_core = fourier_cores{m+1};
+fourier_core = exp(-1j * m * tht2d);
 % The factor in front of the integration
 fac = 1 / (pi * r_max^2 * (besselj(m+1, alpha(m+1, l))).^2);
 % For the integration to get the coefficients, we set the variable outside

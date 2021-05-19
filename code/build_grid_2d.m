@@ -2,9 +2,11 @@
 %   usually used before 2D Fourier-Bessel decomposition
 
 % For these global variables
-global x2d y2d tht2d r2d alpha delta_x r_max in2d out2d
+global x2d y2d tht2d r2d alpha delta_x r_max in2d out2d ...
+	bessel_cores fourier_cores
 
 load(fullfile(code_path, 'alpha.mat'));
+load('fb_cores.mat')
 [x2d, y2d] = ndgrid(x, x);
 [tht2d, r2d] = cart2pol(x2d, y2d);
 delta_x = dx;
