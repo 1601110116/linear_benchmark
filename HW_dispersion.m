@@ -4,17 +4,18 @@ load('parameters.mat');
 addpath(code_path);
 
 %---input---
-m_min = 8;
+m_min = 3;
 m_max = 10;
 l_num = 1;
 n_num = 2;
 fig_position = [50, 50, 900, 400];
 line_width = 2;
 marker_size = 10;
-font_size = 15;
+font_size = 8;
+lgd_location = 'southeast';
 %-----------
-frqs = [25.878, 25.3521, 24.773];
-gammas = [69.643, 68.8778, 66.6889];
+frqs = [23.3534, 25.8780, 26.7350, 26.5969, 26.4008, 25.8780, 25.3332, 24.8094];
+gammas = [43.5309, 51.1861, 62.8595, 66.7983, 69.3115, 69.6818, 68.7938, 66.5915];
 
 load(fullfile(code_path, 'alpha.mat'));
 vte = 4.19e7 * sqrt(Tref);
@@ -54,7 +55,7 @@ plot(ms, 1e-3 * omega_r, 'b-o', 'lineWidth', line_width, ...
 hold on;
 plot(ms, 2*pi*frqs, 'r-o', 'lineWidth', line_width, ...
 	'MarkerSize', marker_size);
-legend('theory', 'simulation')
+legend({'theory', 'simulation'}, 'Location', lgd_location)
 xlabel('m');
 ylabel('$$\omega_r\ \mathrm{\left(kHz\right)}$$', ...
 	'interpreter', 'latex');
@@ -67,7 +68,7 @@ plot(ms, 1e-3 * omega_i, 'b-o', 'lineWidth', line_width, ...
 hold on;
 plot(ms, gammas, 'r-o', 'lineWidth', line_width, ...
 	'MarkerSize', marker_size);
-legend('theory', 'simulation');
+legend({'theory', 'simulation'}, 'Location', lgd_location);
 xlabel('m');
 ylabel('$$\gamma\ \mathrm{\left(kHz\right)}$$', ...
 	'interpreter', 'latex');
