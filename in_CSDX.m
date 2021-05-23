@@ -14,7 +14,7 @@ global dt nt_per_diagnose nx nz visual Tref denref init_uniform zbc_mode B0 mu .
 %     changed except ndiagnose and visual
 %  3: continue from the last .mat file in ../  . Used to simulate in 
 %     different parameters
-simulate_mode = 2;
+simulate_mode = 1;
 
 % Automatic path management
 if simulate_mode == 1
